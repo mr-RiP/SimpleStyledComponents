@@ -1,0 +1,1 @@
+var HomeComponents = require('expose-loader?HomeComponents!./Components/EntryPoint');

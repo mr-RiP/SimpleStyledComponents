@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ES6",
+		"experimentalDecorators": true,
+		"jsx": "react",
+		"strictNullChecks": false,
+		"sourceMap": true,
+		"lib": [ "es6", "dom" ],
+		"alwaysStrict": true,
+		"moduleResolution": "node"
+	}
+}

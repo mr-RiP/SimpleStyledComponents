@@ -1,0 +1,1 @@
+export default ReactDOMServer = require("react-dom/server");
