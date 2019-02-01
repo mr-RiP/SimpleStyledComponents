@@ -17,7 +17,7 @@ module.exports = function(env) {
 		},
 		devtool: 'source-map',
 		resolve: {
-				extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".json"]
+			extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js", ".json"]
 		},
 		optimization: {
 			minimize: false,
