@@ -14,33 +14,19 @@ namespace WebApp
 	{
 		public static void Configure()
 		{
-			// If you want to use server-side rendering of React components, 
-			// add all the necessary JavaScript files here. This includes 
-			// your components as well as all of their dependencies.
-			// See http://reactjs.net/ for more information. Example:
-			//ReactSiteConfiguration.Configuration
-			//	.AddScript("~/Scripts/First.jsx")
-			//	.AddScript("~/Scripts/Second.jsx");
-
-			// If you use an external build too (for example, Babel, Webpack,
-			// Browserify or Gulp), you can improve performance by disabling 
-			// ReactJS.NET's version of Babel and loading the pre-transpiled 
-			// scripts. Example:
-			//ReactSiteConfiguration.Configuration
-			//	.SetLoadBabel(false)
-			//	.AddScriptWithoutTransform("~/Scripts/bundle.server.js")
-
 			ConfigureJsEngine(JsEngineSwitcher.Current);
 			ReactSiteConfiguration.Configuration
+				// node_modules
 				.AddScriptWithoutTransform("~/Client/Dist/vendorBundle.js")
 				.AddScriptWithoutTransform("~/Client/Dist/reactVendorBundle.js")
+				// exposers
 				.AddScriptWithoutTransform("~/Client/Dist/reactExposerBundle.js")
 				.AddScriptWithoutTransform("~/App_Start/ReactJs.Net-specific-hack.js")
+				// home page
 				.AddScriptWithoutTransform("~/Client/Dist/homeBundle.js")
+				// already done with webpack
 				.SetLoadReact(false)
 				.SetLoadBabel(false);
-
-			// Initializer.Initialize(AsPerRequestSingleton);
 		}
 
 		private static void ConfigureJsEngine(IJsEngineSwitcher instance)
@@ -48,14 +34,6 @@ namespace WebApp
 			instance.EngineFactories.Clear();
 			instance.EngineFactories.AddV8();
 			instance.DefaultEngineName = V8JsEngine.EngineName;
-		}
-
-		private static TinyIoCContainer.RegisterOptions AsPerRequestSingleton(TinyIoCContainer.RegisterOptions registerOptions)
-		{
-			return TinyIoCContainer.RegisterOptions.ToCustomLifetimeManager(
-				registerOptions,
-				new HttpContextLifetimeProvider(),
-				"per request singleton");
 		}
 	}
 }
