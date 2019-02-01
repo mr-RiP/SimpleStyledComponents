@@ -12,7 +12,6 @@ namespace WebApp
 	{
 		protected void Application_Start()
 		{
-			ReactConfig.Configure();
 			AreaRegistration.RegisterAllAreas();
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
 			RouteConfig.RegisterRoutes(RouteTable.Routes);

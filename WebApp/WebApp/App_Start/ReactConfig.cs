@@ -32,15 +32,15 @@ namespace WebApp
 
 			ConfigureJsEngine(JsEngineSwitcher.Current);
 			ReactSiteConfiguration.Configuration
-				.AddScriptWithoutTransform(HttpContext.Current.Server.MapPath("~/Client/Dist/vendorBundle.js"))
-				.AddScriptWithoutTransform(HttpContext.Current.Server.MapPath("~/Client/Dist/reactVendorBundle.js"))
-				.AddScriptWithoutTransform(HttpContext.Current.Server.MapPath("~/Client/Dist/reactExposerBundle.js"))
-				.AddScriptWithoutTransform(HttpContext.Current.Server.MapPath("~/App_Start/ReactJs.Net-specific-hack.js"))
-				.AddScriptWithoutTransform(HttpContext.Current.Server.MapPath("~/Client/Dist/homeBundle.js"))
+				.AddScriptWithoutTransform("~/Client/Dist/vendorBundle.js")
+				.AddScriptWithoutTransform("~/Client/Dist/reactVendorBundle.js")
+				.AddScriptWithoutTransform("~/Client/Dist/reactExposerBundle.js")
+				.AddScriptWithoutTransform("~/App_Start/ReactJs.Net-specific-hack.js")
+				.AddScriptWithoutTransform("~/Client/Dist/homeBundle.js")
 				.SetLoadReact(false)
 				.SetLoadBabel(false);
 
-			Initializer.Initialize(AsPerRequestSingleton);
+			// Initializer.Initialize(AsPerRequestSingleton);
 		}
 
 		private static void ConfigureJsEngine(IJsEngineSwitcher instance)
