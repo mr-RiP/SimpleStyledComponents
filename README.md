@@ -1,6 +1,6 @@
 # SimpleStyledComponents
 
-Simple "Hello world!"-like example for describing problem with styled-components server side rendering using ReactJS.NET.
+Simple "Hello world!"-like example for describing the problem with styled-components server side rendering using ReactJS.NET.
 
 ## Problem
 
