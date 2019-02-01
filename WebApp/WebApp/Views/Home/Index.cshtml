@@ -8,7 +8,8 @@
 }
 
 @Html.React("HomeComponents.EntryPoint", new { text = ViewBag.MessageText }, renderFunctions: styledComponentsFunctions)
+@Scripts.Render("~/Client/Dist/homeBundle.js")
 
-@{ 
+@{
 	ViewBag.RenderedStyles = styledComponentsFunctions.RenderedStyles;
 }

@@ -2,12 +2,12 @@ import * as React from "react";
 import styled from "styled-components";
 
 export interface IMessageBoxProps {
-	textLines: string[];
+	text: string;
 }
 
 export class MessageBox extends React.Component<IMessageBoxProps, {}> {
-	private static container = styled.div`
-		width: 600px;
+	private static frame = styled.div`
+		width: 200px;
 		height: 100%;
 		color: yellow;
 		background-color: black;
@@ -18,12 +18,12 @@ export class MessageBox extends React.Component<IMessageBoxProps, {}> {
 	`;
 
 	render() {
-		const { textLines } = this.props;
+		const { text } = this.props;
 
 		return (
-			<MessageBox.container>
-				{textLines.map((line) => <p>{line}</p>)}
-			</MessageBox.container>
+			<MessageBox.frame>
+				<p>{text}</p>
+			</MessageBox.frame>
 		)
 	}
 }

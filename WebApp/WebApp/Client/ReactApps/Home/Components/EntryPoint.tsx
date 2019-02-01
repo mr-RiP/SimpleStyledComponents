@@ -8,10 +8,9 @@ export interface IEntryPointProps {
 export class EntryPoint extends React.Component<IEntryPointProps, {}> {
 	render() {
 		const { text } = this.props;
-		const textLines = text.split("\n");
 
 		return (
-			<MessageBox textLines={textLines} />
+			<MessageBox text={text} />
 		);
 	}
 }
